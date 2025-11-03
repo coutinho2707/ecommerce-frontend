@@ -1,10 +1,10 @@
-import { useCategory } from "@/cases/categories/hooks/use-category";
+import { useCategoryById } from "@/cases/categories/hooks/use-category";
 import { SidebarForm } from "@/components/layout/sidebar-form";
 import { useParams } from "react-router-dom";
 
 export function CategoryForm() {
     const {id} = useParams<{id: string}>();
-    const { data, isLoading} = useCategory(id ?? '')
+    const { data, isLoading} = useCategoryById(id ?? '')
 
     function handleSave(){
 
@@ -13,7 +13,7 @@ export function CategoryForm() {
         <SidebarForm
          title="Cadastro de Categoria"
          onSave={handleSave}
-         />
+        >
          {isLoading ? (
             <h4>Carregando</h4>
          ):(
@@ -21,5 +21,6 @@ export function CategoryForm() {
                 {JSON.stringify(data)}
             </p>
          )}
+        </SidebarForm>
     )
 }

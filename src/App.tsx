@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom"
 import { CategoryLayout } from "./cases/categories/components/category-layout"
 import { CategoryForm } from "./components/category-form"
-import { BrandLayout } from "./cases/brands/components/brand-layout"
+import { BrandLayout } from "./cases/brands/components/brand-layout"  
 import { BrandForm } from "./components/brand-form"
+import { ToastContainer } from "react-toastify"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           </Route>
         </Routes>
       </main>
+      <ToastContainer />
     </div>
   )
 }
